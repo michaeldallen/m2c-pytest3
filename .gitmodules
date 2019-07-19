@@ -1,0 +1,4 @@
+[submodule "makelib"]
+	path = makelib
+	url = git@github.com:michaeldallen/makelib.git
+	branch = master
