@@ -1,5 +1,4 @@
-pipeline {
-  agent any
+node {
   def commit_id
   stages {
     stage('Perparation') {
@@ -8,8 +7,8 @@ pipeline {
       commit_id = readFile('.git/commit-id').trim()
       sh "git rm -v .git/commit-id"
     }
-      
-        stage('Build') {
+
+    stage('Build') {
             steps {
                 echo 'Building'
             }
