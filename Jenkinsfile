@@ -1,6 +1,5 @@
 node {
   def commit_id
-  stages {
     stage('Perparation') {
       checkout scm
       sh "git rev-parse --short HEAD > .git/commit-id"
@@ -9,21 +8,21 @@ node {
     }
 
     stage('Build') {
-            steps {
-                echo 'Building'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying'
-            }
-        }
+      steps {
+        echo 'Building'
+      }
     }
+    stage('Test') {
+      steps {
+        echo 'Testing'
+      }
+    }
+    stage('Deploy') {
+      steps {
+        echo 'Deploying'
+      }
+    }
+    
     post {
         always {
             echo 'This will always run'
