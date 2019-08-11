@@ -22,7 +22,6 @@ RUN pip install pytest
 
 WORKDIR /workdir
 
-ENTRYPOINT ["pytest"]
-CMD ["-v"]
+CMD ["pytest", "-v"]
 
 #EOF
